@@ -3,7 +3,8 @@ package models
 import "time"
 
 type Card struct {
-	Number         string    `json:"number" gorm:"primaryKey"`
+	ID             int       `json:"ID" gorm:"primaryKey"`
+	Number         string    `json:"number" gorm:"unique"`
 	Cvv            string    `json:"cvv"`
 	ExpirationDate time.Time `json:"expirationDate"`
 	Balance        float64   `json:"balance"`
